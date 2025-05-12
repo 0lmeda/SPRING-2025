@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Using Translation Tools</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- Language Selector -->
+<select id="language-select">
+  <option value="en">🌐 English</option>
+  <option value="es">🇪🇸 Español</option>
+</select>
+
+<main>
+
+<a class="back-link" href="index.html">&larr;
+  <span data-lang="en">Back to main page</span>
+  <span data-lang="es" style="display:none;">Volver a la página principal</span>
+</a>
+
+<h1><span data-lang="en">🌍 How to Use Translation Tools</span><span data-lang="es" style="display:none;">🌍 Cómo usar herramientas de traducción</span></h1>
+
+<p data-lang="en">
+  Translation tools like Google Translate or DeepL help parents and students understand notes, emails, homework, and classroom instructions — even if English isn't their first language.
+</p>
+<p data-lang="es" style="display:none;">
+  Las herramientas de traducción como Google Translate o DeepL ayudan a los padres y estudiantes a entender notas, correos, tareas e instrucciones escolares — incluso si el inglés no es su primer idioma.
+</p>
+
+<hr>
+
+<h2><span data-lang="en">📋 Step-by-Step Guide</span><span data-lang="es" style="display:none;">📋 Guía paso a paso</span></h2>
+
+<div class="step">
+  <h3 data-lang="en">Step 1: Go to a translation website</h3>
+  <h3 data-lang="es" style="display:none;">Paso 1: Ve a un sitio de traducción</h3>
+  <p data-lang="en">Open <a href="https://translate.google.com" target="_blank">Google Translate</a> or <a href="https://www.deepl.com/translator" target="_blank">DeepL</a> on your phone or computer.</p>
+  <p data-lang="es" style="display:none;">Abre <a href="https://translate.google.com" target="_blank">Google Translate</a> o <a href="https://www.deepl.com/translator" target="_blank">DeepL</a> en tu teléfono o computadora.</p>
+  <img src="../img/translation/step1.png" alt="Opening Google Translate">
+</div>
+
+<div class="step">
+  <h3 data-lang="en">Step 2: Select your languages</h3>
+  <h3 data-lang="es" style="display:none;">Paso 2: Selecciona tus idiomas</h3>
+  <p data-lang="en">Choose the original language (like English) and the language you understand (like Spanish).</p>
+  <p data-lang="es" style="display:none;">Selecciona el idioma original (como inglés) y el idioma que entiendes (como español).</p>
+  <img src="../img/translation/step2.png" alt="Language selection screen">
+</div>
+
+<div class="step">
+  <h3 data-lang="en">Step 3: Paste or type the text</h3>
+  <h3 data-lang="es" style="display:none;">Paso 3: Escribe o pega el texto</h3>
+  <p data-lang="en">Copy homework instructions or emails and paste them into the box — the tool will translate it instantly.</p>
+  <p data-lang="es" style="display:none;">Copia las instrucciones de tarea o correos y pégalos en el cuadro — la herramienta los traducirá al instante.</p>
+  <img src="../img/translation/step3.png" alt="Entering text into translator">
+</div>
+
+<div class="step">
+  <h3 data-lang="en">Step 4: Use the audio or copy button</h3>
+  <h3 data-lang="es" style="display:none;">Paso 4: Usa el botón de audio o copiar</h3>
+  <p data-lang="en">You can listen to the translation or copy it to send or save.</p>
+  <p data-lang="es" style="display:none;">Puedes escuchar la traducción o copiarla para enviarla o guardarla.</p>
+  <img src="../img/translation/step4.png" alt="Copying or playing translated text">
+</div>
+
+<div class="step">
+  <h3 data-lang="en">Step 5: Try translating documents or images</h3>
+  <h3 data-lang="es" style="display:none;">Paso 5: Prueba traducir documentos o imágenes</h3>
+  <p data-lang="en">DeepL and Google Translate also let you upload files or photos of homework and translate them too.</p>
+  <p data-lang="es" style="display:none;">DeepL y Google Translate también te permiten subir archivos o fotos de tareas y traducirlas.</p>
+  <img src="../img/translation/step5.png" alt="Uploading documents for translation">
+</div>
+
+<hr>
+
+<h2><span data-lang="en">🔗 Recommended Tools</span><span data-lang="es" style="display:none;">🔗 Herramientas recomendadas</span></h2>
+
+<div class="resource-box">
+  <p><strong>Google Translate</strong><br>
+  <a href="https://translate.google.com" target="_blank">translate.google.com</a><br>
+  <span data-lang="en">Supports text, websites, voice, and camera images in over 100 languages.</span>
+  <span data-lang="es" style="display:none;">Admite texto, sitios web, voz e imágenes de cámara en más de 100 idiomas.</span>
+  </p>
+</div>
+
+<div class="resource-box">
+  <p><strong>DeepL Translator</strong><br>
+  <a href="https://www.deepl.com/translator" target="_blank">deepl.com</a><br>
+  <span data-lang="en">Known for accurate and natural translations in English, Spanish, and more.</span>
+  <span data-lang="es" style="display:none;">Conocido por sus traducciones precisas y naturales en inglés, español y más.</span>
+  </p>
+</div>
+
+</main>
+
+<script>
+  const langSelect = document.getElementById("language-select");
+
+  function switchLang(lang) {
+    document.querySelectorAll("[data-lang]").forEach(el => {
+      el.style.display = el.getAttribute("data-lang") === lang ? "inline" : "none";
+    });
+  }
+
+  langSelect.addEventListener("change", () => {
+    const selected = langSelect.value;
+    localStorage.setItem("lang", selected);
+    switchLang(selected);
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("lang") || "en";
+    langSelect.value = saved;
+    switchLang(saved);
+  });
+</script>
+
+</body>
+</html>
