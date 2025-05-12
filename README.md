@@ -12,3 +12,8 @@ also this website it is in spanish and english, the webpage it is responsive in 
 2. The htcdocs was used for my website, because in mobiles devices when someone enter to my website, it was sending them to http instead of https
 3. I used this website as project for two classes
 4. I don't like websites and program them
+
+## CDNS
+1. Boostrap (For the carousel and some styles)
+2. AOS (For the fade and animations when scroll down)
+3. Fonts (a google font )
